@@ -215,7 +215,7 @@ Examples:
   # Submit and exit without polling
   %(prog)s --url https://example.com/air --token mytoken --tree netdev/net-next --no-wait 0001-fix.patch
 
-  # Check once and get results if done
+  # Fetch full Claude output (by default we only print regression report)
   %(prog)s --url https://example.com/air --token mytoken --review-id abc-123-def --no-wait --format markup
         """
     )
@@ -279,7 +279,9 @@ Examples:
 
         # Print link to review UI
         ui_url = f"{args.url.rstrip('/')}/ai-review.html?id={review_id}"
-        print(f"Review URL: {ui_url}")
+        if args.token:
+            ui_url += f"&token={args.token}"
+        print(f"Review URL: {colorize(ui_url, Colors.CYAN)}")
 
         if args.no_wait:
             print("Submission complete (--no-wait specified)")
