@@ -277,6 +277,10 @@ Examples:
 
         print(f"Review ID: {review_id}")
 
+        # Print link to review UI
+        ui_url = f"{args.url.rstrip('/')}/ai-review.html?id={review_id}"
+        print(f"Review URL: {ui_url}")
+
         if args.no_wait:
             print("Submission complete (--no-wait specified)")
             return
