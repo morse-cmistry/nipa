@@ -48,4 +48,4 @@ docker run $DOCKER_FLAGS --rm --user=nipa \
        -v $PWD/ccache:/home/nipa/.ccache \
        -v $PWD/ccache:/root/.ccache \
        --name nipa-local nipa-local \
-       /nipa/ingest_mdir.py --mdir /nipa-patches --tree /nipa-run/tree --tree-name $NIPA_TREE_NAME #--tree-branch nipa-local
+       /nipa/ingest_mdir.py --mdir /nipa-patches --tree /nipa-run/tree --tree-name $NIPA_TREE_NAME --result-dir results -d patch/cc_maintainers

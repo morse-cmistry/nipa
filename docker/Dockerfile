@@ -24,6 +24,8 @@ RUN apt-get update && apt-get install -y \
 	strace \
 	vim \
 	python3-requests \
+	python3-yml \
+	python3-patatt \
 	# for spdxcheck.py:
 	python3-ply \
 	python3-git \
